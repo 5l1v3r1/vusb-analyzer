@@ -1,7 +1,26 @@
 ------------------------
 the Virtual USB Analyzer
 ------------------------
-Version 1.1
+GitHub Edition
+
+Hello! This is an old project from 2005 that I just now (2014) imported from SourceForge to GitHub. I wrote this way back when I worked at VMware, and it uses many obsolete GUI libraries that are only available for Linux these days. But it still runs nicely in an Ubuntu VM, and this repo now exists as an opportunuity to gradually modernize a tool many people including myself still find useful.
+
+Fow now I'll leave you with a few notes:
+
+* The version of vusb-analyzer in Ubuntu is too old to support the log format used by current releases of VMware products. Use this version instead.
+* Modern VMware releases also include an automatic log throttling feature that can suck if you're trying to record a pristine log of some operation's traffic. For tasks like this, I find the following config options helpful:
+
+```
+monitor = "debug"
+usb.analyzer.enable = TRUE
+usb.analyzer.maxLine = 8192
+mouse.vusb.enable = FALSE
+log.throttleBytesPerSec = 100000000
+```
+
+–Micah
+
+---------------------
 
 This is a GUI tool for analyzing logs of traced USB
 communications. For more information, see the project's web page:
